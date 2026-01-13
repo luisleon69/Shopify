@@ -12,6 +12,25 @@ layout/theme.liquid                 <!doctype html>
                                        </body>
                                      </html>
 
+templates/index.json                  {
+                                       "sections": {},
+                                       "order": []
+                                     }
+
+templates/collection.json             {
+                                       "sections": {
+                                         "product-grid": {
+                                           "type": "main-collection-product-grid",
+                                           "settings": {
+                                             "products_per_page": 20
+                                           }
+                                         }
+                                       },
+                                       "order": [
+                                         "product-grid"
+                                       ]
+                                     }
+
 sections/main-collection-product-grid.liquid
                                      {% paginate collection.products by section.settings.products_per_page %}
                                      <h1>{{ collection.title }}</h1>
@@ -42,19 +61,14 @@ sections/main-collection-product-grid.liquid
                                      }
                                      {% endschema %}
 
-templates/collection.json             {
-                                       "sections": {
-                                         "product-grid": {
-                                           "type": "main-collection-product-grid",
-                                           "settings": {
-                                             "products_per_page": 20
-                                           }
-                                         }
-                                       },
-                                       "order": [
-                                         "product-grid"
-                                       ]
-                                     }
+assets/base.css                      .grid {
+                                         display: grid;
+                                         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                                         gap: 20px;
+                                       }
+                                       .product {
+                                         text-align: center;
+                                       }
 
 config/settings_schema.json          [
                                        {
@@ -65,11 +79,6 @@ config/settings_schema.json          [
 
 config/settings_data.json            {}
 
-assets/base.css                      .grid {
-                                         display: grid;
-                                         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                                         gap: 20px;
-                                       }
-                                       .product {
-                                         text-align: center;
-                                       }
+locales/en.default.json              {
+                                       "general": {}
+                                     }
