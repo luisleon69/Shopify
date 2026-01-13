@@ -1,0 +1,122 @@
+{
+  "sections": {
+    "banner": {
+      "type": "ds-main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 20,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "product_cards_stretch": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "1",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "collage_RiDjhz": {
+      "type": "collage",
+      "blocks": {
+        "image_d6MHRP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/homepage4.webp"
+          }
+        },
+        "product_gjL7rD": {
+          "type": "product",
+          "settings": {
+            "product": "mini-retro-white-noise-bluetooth-speaker",
+            "second_image": false
+          }
+        },
+        "collection_np8g8k": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "image_d6MHRP",
+        "product_gjL7rD",
+        "collection_np8g8k"
+      ],
+      "settings": {
+        "heading": "Your best relax companion!",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "none",
+        "color_scheme": "custom",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "custom_colors_background": "#ffffff",
+        "custom_colors_text": "#000000"
+      }
+    },
+    "rich_text_iQYEAe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qEJMGh": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Why You’ll Love It</p>",
+            "heading_size": "h2"
+          }
+        },
+        "text_DVCUXi": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This device is designed to fit seamlessly into your lifestyle.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qEJMGh",
+        "text_DVCUXi"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "custom_colors_background": "#000000",
+        "custom_colors_text": "#ffffff"
+      }
+    },
+    "video_G4qDA6": {
+      "type": "video",
+      "settings": {
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "collage_RiDjhz",
+    "rich_text_iQYEAe",
+    "video_G4qDA6"
+  ]
+}
