@@ -1,14 +1,75 @@
-{
-  "layout/theme.liquid": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>{{ page_title }}</title>\n    {{ content_for_header }}\n  </head>\n  <body>\n    {{ content_for_layout }}\n  </body>\n</html>",
-  
-  "sections/main-collection-product-grid.liquid": "{% paginate collection.products by section.settings.products_per_page %}\n<h1>{{ collection.title }}</h1>\n<div class=\"grid\">\n  {% for product in collection.products %}\n    <div class=\"product\">\n      <a href=\"{{ product.url }}\">\n        {{ product.featured_image | image_url: width: 400 | image_tag }}\n        <p>{{ product.title }}</p>\n        <p>{{ product.price | money }}</p>\n      </a>\n    </div>\n  {% endfor %}\n</div>\n{% endpaginate %}\n{% schema %}{\"name\": \"Collection product grid\",\"settings\": [{\"type\": \"number\",\"id\": \"products_per_page\",\"label\": \"Products per page\",\"default\": 20}]}{% endschema %}",
+Carpeta/Archivo                     Contenido
+--------------------                ---------------------------------------------
+layout/theme.liquid                 <!doctype html>
+                                     <html lang="en">
+                                       <head>
+                                         <meta charset="utf-8">
+                                         <title>{{ page_title }}</title>
+                                         {{ content_for_header }}
+                                       </head>
+                                       <body>
+                                         {{ content_for_layout }}
+                                       </body>
+                                     </html>
 
-  "templates/collection.json": "{\n  \"sections\": {\n    \"product-grid\": {\n      \"type\": \"main-collection-product-grid\",\n      \"settings\": {\n        \"products_per_page\": 20\n      }\n    }\n  },\n  \"order\": [\"product-grid\"]\n}",
+sections/main-collection-product-grid.liquid
+                                     {% paginate collection.products by section.settings.products_per_page %}
+                                     <h1>{{ collection.title }}</h1>
+                                     <div class="grid">
+                                       {% for product in collection.products %}
+                                         <div class="product">
+                                           <a href="{{ product.url }}">
+                                             {{ product.featured_image | image_url: width: 400 | image_tag }}
+                                             <p>{{ product.title }}</p>
+                                             <p>{{ product.price | money }}</p>
+                                           </a>
+                                         </div>
+                                       {% endfor %}
+                                     </div>
+                                     {% endpaginate %}
 
-  "config/settings_schema.json": "[{\"name\": \"Theme settings\",\"settings\": []}]",
+                                     {% schema %}
+                                     {
+                                       "name": "Collection product grid",
+                                       "settings": [
+                                         {
+                                           "type": "number",
+                                           "id": "products_per_page",
+                                           "label": "Products per page",
+                                           "default": 20
+                                         }
+                                       ]
+                                     }
+                                     {% endschema %}
 
-  "config/settings_data.json": "{}",
+templates/collection.json             {
+                                       "sections": {
+                                         "product-grid": {
+                                           "type": "main-collection-product-grid",
+                                           "settings": {
+                                             "products_per_page": 20
+                                           }
+                                         }
+                                       },
+                                       "order": [
+                                         "product-grid"
+                                       ]
+                                     }
 
-  "assets/base.css": ".grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; } .product { text-align: center; }"
-}
-      
+config/settings_schema.json          [
+                                       {
+                                         "name": "Theme settings",
+                                         "settings": []
+                                       }
+                                     ]
+
+config/settings_data.json            {}
+
+assets/base.css                      .grid {
+                                         display: grid;
+                                         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                                         gap: 20px;
+                                       }
+                                       .product {
+                                         text-align: center;
+                                       }
